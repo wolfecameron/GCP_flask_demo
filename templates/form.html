@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Submit a form</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="pagetitle">
+        <h1>Rate my GCP Workshop!</h1>
+      </div>
+      <div id="main">
+        <form method="post" action="{{ url_for('submitted_form') }}">
+          <label for="name">Name:</label>
+          <input type="text" name="name"><br />
+          <label for="major">Major:</label>
+          <input type="text" name="major"><br />
+          <label for="rating">Event Rating:</label><br />
+          <input type="radio" name="rating" value='Horrible'>Horrible<br />
+          <input type="radio" name="rating" value='Bad'>Bad<br />
+          <input type="radio" name="rating" value='Meh'>Meh<br />
+          <input type="radio" name="rating" value='Good'>Good<br />
+          <input type="radio" name="rating" value='Awesome'>Awesome<br />
+          <label for="comments">Comments:</label>
+          <textarea name="comments"></textarea><br />
+          <input type="submit">
+        </form>
+      </div>
+          <a href='/'>Home</a>
+	</div>
+  </body>
+</html>

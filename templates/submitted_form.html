@@ -1,0 +1,24 @@
+<html>
+ <head>
+   <title>Submitted form</title>
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+ </head>
+ <body>
+   <div id="container">
+     <div class="pagetitle">
+       <h1>Form submitted</h1>
+     </div>
+     <div id="main">
+       <p>Thanks for rating my event, {{name}}!</p>
+       <p>Here's a copy of your answers:</p>
+       <p>
+          <strong>Name</strong>: {{name}} <br>
+          <strong>Major</strong>: {{major}} <br>
+          <strong>Event Rating</strong>: {{rating}} <br>
+          <strong>Extra Comments</strong>: {{comments}}
+       </p>
+     </div>
+          <a href='/'>Home</a>
+   </div>
+ </body>
+</html>

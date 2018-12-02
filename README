@@ -1,0 +1,54 @@
+**** DIRECTORY/FILE STRUCTURE ****
+
+/static contains all CSS files
+
+/templates contains all html files
+
+app.yaml is GCP configuration file
+
+main.py contains the main handler for the website
+
+Steps to create website:
+
+Link to code lab: https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
+
+1. create a python 2.7.9 virutal environment using Anaconda
+	- here is a link for how to do this: https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
+	- the command is: conda create -n <env_name> python=2.7.9 anaconda
+
+2. install the google cloud sdk package
+	- here is a link for how to do this: https://cloud.google.com/sdk/docs
+
+3. activate python 2.7.9 virtual environment 
+	- "source activate <env_name>"
+
+4. install virtualenv inside of your python 2.7.9 virtual environment
+	- command: "pip install virtualenv"
+	- create virtual environment using "virtualenv <other_env_name>"
+
+5. activate the second virtual environment, this one is used solely to containerize all the packages you use so that you have a list of libraries to send to the server
+	- command: "source <other_env_name>/bin/activate"
+
+6. install Flask while simultaneously inside both virtual environments
+	- command: "pip install Flask" *** UPPERCASE MATTERS HERE ***
+
+7. create a list of libraries that the server will need - GCP reads this when you deploy the app
+	- command: "pip freeze > requirements.txt"
+
+8. Create all the files and directories that you see in this repository and populate them with the code I provided
+	- I won't go over details of how Flask and the app.yaml/configuration files work, but here are a few links that would be helpful
+	- Flask documentation: http://flask.pocoo.org/docs/1.0/
+	- app.yaml resource - this is what you use to configure everything on the website: https://cloud.google.com/appengine/docs/standard/python/config/appref
+
+9. Now everything should be ready. Go to your Google Cloud console (https://console.cloud.google.com) in your browser and create a new project
+	- click "Select a Project" in upper left corner, "New Project" in pop up window, and enter all the details for your project!
+
+10. Link your terminal to this project so gcloud knows how/where to deploy the project
+	- command: "gcloud config set project <myProject>" where <myProject> is whatever you named your project when creating it
+
+11. Deploy the app
+	- command: "gcloud app deploy"
+	- this will prompt you to choose a "zone" when you begin deploying, I usually choose US-central. This is just asking which server to put the app on.
+
+YOUR WEBSITE IS NOW ON THE INTERNET!!!!! For more info on customizing everything, look at more codelabs and GCP products that you can use on the Google Cloud platform website,
+there is an endless amount of stuff to learn.
