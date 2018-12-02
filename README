@@ -8,7 +8,7 @@ app.yaml is GCP configuration file
 
 main.py contains the main handler for the website
 
-Steps to create website:
+**** Steps to create website: ****
 
 Link to code lab: https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env
 
